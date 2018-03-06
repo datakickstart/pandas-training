@@ -7,13 +7,13 @@ First download and install Docker, a container service we will use to run the en
 Click button “Get Docker CE for Mac (Stable)”
 
 Then follow install instructions...
-double click Docker.dmg
-drag icon to Applications folder
+double click Docker.dmg  
+drag icon to Applications folder  
 
 ### Setup folder with data
-Open terminal and run:
-sudo mkdir -p /tmp/notebook/data
-sudo chmod -R 777 /tmp/notebook
+Open terminal and run:  
+sudo mkdir -p /tmp/notebook/data  
+sudo chmod -R 777 /tmp/notebook  
 curl -o /tmp/notebook/data/vehicle_stops.jsonl https://s3-us-west-2.amazonaws.com/dvannoy-public/sample_data/vehicle_stops_newline_delimited.json
 
 
@@ -21,7 +21,7 @@ curl -o /tmp/notebook/data/vehicle_stops.jsonl https://s3-us-west-2.amazonaws.co
 Start docker application
 
 Then open Terminal and run:
-docker pull dylanmei/zeppelin
+docker pull dylanmei/zeppelin  
 (this will cause it to download the docker image for Zeppelin)
 
 Then start up Zeppelin by running:
