@@ -30,7 +30,7 @@ docker run --rm -p 8080:8080 -v /tmp/notebook:/usr/zeppelin/notebook --name zepp
 Confirm it is working by browsing to http://localhost:8080
 
 
-### Install MySQL docker image
+### Install MySQL docker image (Optional - no specific examples depend on this)
 From Terminal:  
 docker pull mysql:latest  
 docker run --name mysql -e MYSQL_ROOT_PASSWORD=mysqlPass -d mysql:latest  
@@ -38,3 +38,10 @@ docker run --name mysql -e MYSQL_ROOT_PASSWORD=mysqlPass -d mysql:latest
 MySQL command line:  
 docker run -it --link mysql:mysql --rm mysql sh -c 'exec mysql -h"$MYSQL_PORT_3306_TCP_ADDR" -P"$MYSQL_PORT_3306_TCP_PORT" -uroot -p"$MYSQL_ENV_MYSQL_ROOT_PASSWORD"'
 
+### Install PostgreSQL docker image (Optional - no specific examples depend on this)
+From Terminal:
+docker pull postgres
+docker run --name postgres -e POSTGRES_PASSWORD=mypostgresPass -d postgres
+
+psql comman line:
+docker run -it --rm --link some-postgres:postgres postgres psql -h postgres -U postgres
